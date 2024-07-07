@@ -114,7 +114,9 @@ int main(void)
   MX_USART3_UART_Init();
   MX_USB_OTG_FS_PCD_Init();
   /* USER CODE BEGIN 2 */
-
+  ES_WIFI_Status_t error = ES_WIFI_STATUS_MODULE_CRASH;
+  ES_WIFIObject_t    EsWifiObj;
+  error = wifi_probe_lite(&EsWifiObj);
   /* USER CODE END 2 */
 
   MX_ThreadX_Init();

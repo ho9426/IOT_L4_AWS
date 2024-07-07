@@ -123,7 +123,7 @@ void tx_app_thread_entry(ULONG thread_input)
   /* USER CODE BEGIN tx_app_thread_entry */
 	while(1){
 		HAL_GPIO_TogglePin(GPIOC, LED3_WIFI__LED4_BLE_Pin);
-		tx_thread_sleep(2000);
+		tx_thread_sleep(500);
 	}
   /* USER CODE END tx_app_thread_entry */
 }

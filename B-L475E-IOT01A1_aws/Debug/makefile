@@ -16,6 +16,7 @@ RM := rm -rf
 -include Middlewares/ST/netxduo/common/src/subdir.mk
 -include Middlewares/ST/netxduo/addons/mqtt/subdir.mk
 -include Drivers/STM32L4xx_HAL_Driver/Src/subdir.mk
+-include Drivers/BSPv2/Components/es_wifi/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
 -include AZURE_RTOS/App/subdir.mk

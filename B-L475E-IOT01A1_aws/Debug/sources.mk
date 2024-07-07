@@ -25,6 +25,7 @@ SUBDIRS := \
 AZURE_RTOS/App \
 Core/Src \
 Core/Startup \
+Drivers/BSPv2/Components/es_wifi \
 Drivers/STM32L4xx_HAL_Driver/Src \
 Middlewares/ST/netxduo/addons/mqtt \
 Middlewares/ST/netxduo/common/src \

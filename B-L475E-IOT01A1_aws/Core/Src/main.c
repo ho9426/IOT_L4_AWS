@@ -114,9 +114,39 @@ int main(void)
   MX_USART3_UART_Init();
   MX_USB_OTG_FS_PCD_Init();
   /* USER CODE BEGIN 2 */
-  ES_WIFI_Status_t error = ES_WIFI_STATUS_MODULE_CRASH;
-  ES_WIFIObject_t    EsWifiObj;
-  error = wifi_probe_lite(&EsWifiObj);
+  //ES_WIFI_Status_t error = ES_WIFI_STATUS_MODULE_CRASH;
+  //ES_WIFIObject_t    EsWifiObj;
+  //error = wifi_probe_lite(&EsWifiObj);
+
+  uint32_t ret = 0;
+  float temp_value = 0;
+
+  BSP_TSENSOR_Init();
+
+  while(1)
+  {
+    ret = Serial_Scanf(255);
+    if((ret == 'n') || (ret == 'N'))
+    {
+      printf("\n*** This is a new data ***\n\n");
+      temp_value = BSP_TSENSOR_ReadTemp();
+//      printf("TEMPERATURE is = %.2f �C\n", temp_value);
+      printf("\n*** This is a new data ***\n\n");
+      printf("\n*** Type n or N to get a new data ***\n\n");
+      printf("\n*** Type q or Q to quit Temperature Test ***\n\n");
+    }
+    else if((ret == 'q') || (ret == 'Q'))
+    {
+      printf("\n*** End of Temperature Test ***\n\n");
+      return;
+    }
+    else
+    {
+      printf("\n*** Type n or N to get a new data ***\n\n");
+      printf("\n*** Type q or Q to quit Temperature Test ***\n\n");
+    }
+  }
+
   /* USER CODE END 2 */
 
   MX_ThreadX_Init();
